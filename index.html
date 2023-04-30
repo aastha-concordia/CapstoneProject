@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Job Satisfaction Analysis</h1>
+    <h2>Sex : Both sex:0,Female:1,Male:2</h2>
+	<h3>Employment_type: paid worker:0,self employed:1,total:2</h3>
+	<h4>Age in years:15-24 years:0,25-34 years:1, 25-54 years:2, 35-44 years:3, 45-54 years:4, 55-64 years:5 ,65-75 years:7, 65+ years:7, 15+ years:9</h4>
+	<h5>GEO : Alberta:0,Atlantic provinces:1,British Columbia:2,canada:3,Manitoba:4,New Brunswick:5,Newfoundland and Labrador:6,Nova Scotia:7,Ontario:8,Prairie provinces:9,Prince Edward island:10, Quebec:11,Saskatchewan:12</h5>
+	<h6>Satisfied:1     ;   dissatisfied:0</h6>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="GEO" placeholder="GEO" required="required" />
+        <input type="text" name="Age" placeholder="Age" required="required" />
+		<input type="text" name="Sex" placeholder="Sex" required="required" />
+		<input type="text" name="Employment_type" placeholder="employment_type required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ 
+</body>
+</html>
