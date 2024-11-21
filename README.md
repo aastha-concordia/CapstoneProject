@@ -11,4 +11,4 @@ Splitting the dataset
 Manipulating the data using various data analysis techniques
 Regression Analysis and predictive analysis to evaulate the model & predictions
 Visualization with generating Waffle chart using Waffle function from pywaffle
-
+Model Deployment using Flask : Go to your browser to http://127.0.0.1:5000 and you will see the result that Person is satisfied or not with his work life balance
